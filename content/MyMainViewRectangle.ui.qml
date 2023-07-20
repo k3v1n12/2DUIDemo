@@ -22,6 +22,16 @@ Rectangle {
         anchors.bottomMargin: 20
         anchors.topMargin: 20
         fillMode: Image.PreserveAspectFit
+
+        Image {
+            id: suitImage
+            x: 154
+            y: 141
+            width: 100
+            height: 100
+            source: "qrc:/qtquickplugin/images/template_image.png"
+            fillMode: Image.PreserveAspectFit
+        }
     }
     states: [
         State {
@@ -31,8 +41,25 @@ Rectangle {
             PropertyChanges {
                 target: image
                 source: "images/lagoon.jpg"
+                fillMode: Image.PreserveAspectFit
+                autoTransform: false
+                anchors.rightMargin: 20
+                anchors.bottomMargin: 20
+                anchors.leftMargin: 20
+                anchors.topMargin: 20
+            }
+
+            PropertyChanges {
+                target: suitImage
+                x: 152
+                y: 66
+                width: 100
+                height: 160
+                visible: true
+                source: "images/diver.png"
             }
         },
+
         State {
             name: "Space"
             when: spaceRoundButton.checked
@@ -40,6 +67,19 @@ Rectangle {
             PropertyChanges {
                 target: image
                 source: "images/planet.png"
+                anchors.rightMargin: 20
+                anchors.bottomMargin: 20
+                anchors.leftMargin: 20
+                anchors.topMargin: 20
+            }
+
+            PropertyChanges {
+                target: suitImage
+                x: 198
+                y: 98
+                width: 208
+                height: 210
+                source: "images/spacesuit.png"
             }
         },
         State {
