@@ -11,61 +11,52 @@ import HelloDemoProject
 
 Rectangle {
     id: rectangle
-    width: Constants.width
-    height: Constants.height
+    width: 1300
+    height: 740
+    color: "#ffffff"
 
-    color: Constants.backgroundColor
-
-    Button {
-        id: button
-        text: qsTr("Press me")
-        anchors.verticalCenter: parent.verticalCenter
-        checkable: true
-        anchors.horizontalCenter: parent.horizontalCenter
-
-        Connections {
-            target: button
-            onClicked: animation.start()
-        }
+    MyMainViewRectangle {
+        id: mainViewRectangle
+        width: 703
+        height: 366
     }
 
-    Text {
-        id: label
-        text: qsTr("Hello HelloDemoProject")
-        anchors.top: button.bottom
-        font.family: Constants.font.family
-        anchors.topMargin: 45
-        anchors.horizontalCenter: parent.horizontalCenter
+    Item {
+        id: roundButtonItem
+        x: 828
+        y: 168
+        width: 400
+        height: 86
 
-        SequentialAnimation {
-            id: animation
-
-            ColorAnimation {
-                id: colorAnimation1
-                target: rectangle
-                property: "color"
-                to: "#2294c6"
-                from: Constants.backgroundColor
-            }
-
-            ColorAnimation {
-                id: colorAnimation2
-                target: rectangle
-                property: "color"
-                to: Constants.backgroundColor
-                from: "#2294c6"
-            }
+        RoundButton {
+            id: lagoonRoundButton
+            width: 160
+            height: 55
+            text: "Lagoon"
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.left: parent.left
+            autoExclusive: true
+            checkable: true
+            anchors.leftMargin: 20
+            font.pointSize: 15
+            font.bold: true
         }
+
+        RoundButton {
+            id: spaceRoundButton
+            x: 227
+            width: 160
+            height: 55
+            text: "Space"
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.right: parent.right
+            autoExclusive: true
+            checkable: true
+            anchors.rightMargin: 20
+            font.bold: true
+            font.pointSize: 15
+        }
+
     }
-    states: [
-        State {
-            name: "clicked"
-            when: button.checked
 
-            PropertyChanges {
-                target: label
-                text: qsTr("Button Checked")
-            }
-        }
-    ]
 }

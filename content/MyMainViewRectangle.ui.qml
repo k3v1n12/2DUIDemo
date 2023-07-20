@@ -10,6 +10,7 @@ Rectangle {
     radius: 10
     anchors.verticalCenter: parent.verticalCenter
     anchors.left: parent.left
+    state: "Default"
     anchors.leftMargin: 100
 
     Image {
@@ -22,4 +23,28 @@ Rectangle {
         anchors.topMargin: 20
         fillMode: Image.PreserveAspectFit
     }
+    states: [
+        State {
+            name: "Lagoon"
+            when: lagoonRoundButton.checked
+
+            PropertyChanges {
+                target: image
+                source: "images/lagoon.jpg"
+            }
+        },
+        State {
+            name: "Space"
+            when: spaceRoundButton.checked
+
+            PropertyChanges {
+                target: image
+                source: "images/planet.png"
+            }
+        },
+        State {
+            name: "Default"
+            when: !lagoonRoundButton.checked && spaceRoundButton.checked
+        }
+    ]
 }
