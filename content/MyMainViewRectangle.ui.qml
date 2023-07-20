@@ -31,6 +31,28 @@ Rectangle {
             height: 100
             source: "qrc:/qtquickplugin/images/template_image.png"
             fillMode: Image.PreserveAspectFit
+
+            Image {
+                id: alienImage
+                x: 8
+                y: 0
+                width: 84
+                height: 38
+                visible: alienRadioButton.checked
+                source: "images/alien.png"
+                fillMode: Image.PreserveAspectFit
+            }
+
+            Image {
+                id: catImage
+                x: 8
+                y: 0
+                width: 84
+                height: 38
+                visible: catRadioButton.checked
+                source: "images/cat.png"
+                fillMode: Image.PreserveAspectFit
+            }
         }
     }
     states: [
@@ -58,6 +80,20 @@ Rectangle {
                 visible: true
                 source: "images/diver.png"
             }
+
+            PropertyChanges {
+                target: alienImage
+                x: 8
+                y: 13
+                width: 76
+                height: 26
+            }
+
+            PropertyChanges {
+                target: catImage
+                x: 7
+                y: 5
+            }
         },
 
         State {
@@ -80,6 +116,22 @@ Rectangle {
                 width: 208
                 height: 210
                 source: "images/spacesuit.png"
+            }
+
+            PropertyChanges {
+                target: alienImage
+                x: 54
+                y: 8
+                width: 84
+                height: 52
+            }
+
+            PropertyChanges {
+                target: catImage
+                x: 54
+                y: 8
+                width: 84
+                height: 52
             }
         },
         State {

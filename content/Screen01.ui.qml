@@ -59,4 +59,59 @@ Rectangle {
 
     }
 
+    Item {
+        id: radioButtonItem
+        x: 926
+        y: 276
+        width: 236
+        height: 184
+        visible: lagoonRoundButton.checked || spaceRoundButton.checked
+
+        Image {
+            id: catPreviewImage
+            y: 111
+            width: 82
+            height: 58
+            anchors.left: parent.left
+            anchors.bottom: parent.bottom
+            source: "images/cat.png"
+            anchors.leftMargin: 35
+            anchors.bottomMargin: 15
+            fillMode: Image.PreserveAspectFit
+        }
+
+        Image {
+            id: alienPreviewImage
+            width: 82
+            height: 58
+            anchors.left: parent.left
+            anchors.top: parent.top
+            source: "images/alien.png"
+            anchors.topMargin: 15
+            anchors.leftMargin: 35
+            fillMode: Image.PreserveAspectFit
+        }
+
+        RadioButton {
+            id: catRadioButton
+            x: 134
+            y: 120
+            text: qsTr("Cat")
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 25
+            anchors.rightMargin: 40
+        }
+
+        RadioButton {
+            id: alienRadioButton
+            x: 134
+            text: qsTr("Alien")
+            anchors.right: parent.right
+            anchors.top: parent.top
+            anchors.topMargin: 25
+            anchors.rightMargin: 30
+        }
+    }
+
 }
