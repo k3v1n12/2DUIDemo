@@ -30,6 +30,8 @@ Rectangle {
             width: 100
             height: 100
             source: "qrc:/qtquickplugin/images/template_image.png"
+            rotation: rotationSlider.value
+            scale: zoomSlider.value
             fillMode: Image.PreserveAspectFit
 
             Image {
@@ -64,6 +66,30 @@ Rectangle {
                 source: "images/sunglasses.png"
                 fillMode: Image.PreserveAspectFit
             }
+        }
+
+        Slider {
+            id: zoomSlider
+            width: 114
+            height: 11
+            anchors.left: parent.left
+            anchors.top: parent.top
+            anchors.topMargin: 15
+            anchors.leftMargin: 35
+            to: 2
+            value: 1
+        }
+
+        Slider {
+            id: rotationSlider
+            y: 46
+            width: 114
+            height: 11
+            anchors.left: parent.left
+            anchors.leftMargin: 35
+            value: 0
+            to: 360
+            from: -360
         }
     }
     states: [
