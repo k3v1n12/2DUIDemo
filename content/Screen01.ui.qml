@@ -66,7 +66,7 @@ Rectangle {
         width: 236
         height: 184
         visible: lagoonRoundButton.checked || spaceRoundButton.checked
-
+        
         Image {
             id: catPreviewImage
             y: 111
@@ -111,6 +111,38 @@ Rectangle {
             anchors.top: parent.top
             anchors.topMargin: 25
             anchors.rightMargin: 30
+        }
+    }
+
+    Item {
+        id: glassesItem
+        x: 926
+        y: 482
+        width: 302
+        height: 90
+        visible: lagoonRoundButton.checked || spaceRoundButton.checked
+
+        Image {
+            id: glassesPreviewImage
+            width: 79
+            height: 70
+            anchors.left: parent.left
+            anchors.top: parent.top
+            source: "images/sunglasses.png"
+            anchors.topMargin: 10
+            anchors.leftMargin: 40
+            fillMode: Image.PreserveAspectFit
+        }
+
+        Switch {
+            id: glassesSwitch
+            x: 127
+            text: qsTr("Sunglasses")
+            anchors.right: parent.right
+            anchors.top: parent.top
+            anchors.rightMargin: 40
+            anchors.topMargin: 25
+            state: ""
         }
     }
 

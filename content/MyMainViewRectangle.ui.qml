@@ -53,6 +53,17 @@ Rectangle {
                 source: "images/cat.png"
                 fillMode: Image.PreserveAspectFit
             }
+
+            Image {
+                id: glassesImage
+                x: 28
+                y: 8
+                width: 42
+                height: 23
+                visible: glassesSwitch.checked
+                source: "images/sunglasses.png"
+                fillMode: Image.PreserveAspectFit
+            }
         }
     }
     states: [
@@ -94,6 +105,14 @@ Rectangle {
                 x: 7
                 y: 5
             }
+
+            PropertyChanges {
+                target: glassesImage
+                x: 27
+                y: 14
+                width: 39
+                height: 23
+            }
         },
 
         State {
@@ -132,6 +151,14 @@ Rectangle {
                 y: 8
                 width: 84
                 height: 52
+            }
+
+            PropertyChanges {
+                target: glassesImage
+                x: 68
+                y: 23
+                width: 49
+                height: 24
             }
         },
         State {
